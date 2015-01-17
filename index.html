@@ -103,16 +103,6 @@
 					</section>
 
 					<section>
-						<h2>Reason</h2>
-
-						<img src="images/reason-screen.jpg" data-source="http://i1-mac.softpedia-static.com/screenshots/Reason_7.jpg">
-
-						<aside class="notes">
-
-						</aside>
-					</section>
-
-					<section>
 						<h2>Minimum Feature Set</h2>
 
 						<ul class="spaced">
@@ -154,7 +144,6 @@
 							<li class="fragment">Select parts of audio</li>
 							<li class="fragment">Import audio files</li>
 						</ul>
-
 
 					</section>
 
@@ -281,11 +270,18 @@
 
 					</section>
 
+          <section>
+            <h2>Video collaboration</h2>
+
+            <img src="images/videocollaboration.jpg" />
+          </section>
+
 				</section>
 
         <section>
           <section>
             <h2>Scheduler</h2>
+            mention cwilsos nice article
 
           </section>
 
@@ -295,6 +291,9 @@
           </section>
         </section>
 
+        <section>demo</section>
+
+        <section>result and critique</section>
 
 				<section>
 					<h1>THX so much for your attention!</h1>
@@ -336,42 +335,6 @@
 					{ src: 'plugin/sources/sources.js', async: true }
 				]
 			});
-
-			var context = new webkitAudioContext();
-			var source = null;
-
-			window.buffers = {};
-
-			var loadBuffer = function(location, bufferName){
-				var xhr = new XMLHttpRequest();
-		    xhr.open('GET', location, true);
-		    xhr.responseType = 'arraybuffer';
-		    xhr.onload = function(e) {
-		      context.decodeAudioData(xhr.response, function(buffer) {
-		      	buffers[bufferName] = buffer;
-		      });
-		    };
-		    xhr.send();
-			};
-
-			// loadBuffer('mixer/songs/rick2.mp3', 'rick');
-			// loadBuffer('mixer/songs/wearetherejects-2.mp3', 'rejects');
-			// loadBuffer('slash.mp3', 'slash');
-			// loadBuffer('dot.mp3', 'dot');
-			// loadBuffer('dash.mp3', 'dash');
-			// loadBuffer('dotcom.mp3', 'dotcom');
-
-			var playBuffer = function(bufferName, when, offset, duration){
-				if(source) source.stop(0);
-				source = context.createBufferSource();
-		    source.buffer = buffers[bufferName];
-		    source.connect(context.destination);
-		    source.start(when + context.currentTime, offset, duration);
-			};
-
-			// document.getElementById('playWith2sdelay').addEventListener('click', function(){
-			// 	playBuffer('rick', 2, 0, 15);
-			// });
 
 		</script>
 
