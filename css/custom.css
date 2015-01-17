@@ -24,13 +24,5 @@ input{
 }
 
 pre code {
-  font-size: 25px !important; 
-}
-
-#sjshashtag{
-  position: fixed;
-  top: 40px;
-  right: 40px;
-  font-size: 30px;
-  color: #efefef;
+  font-size: 25px !important;
 }
